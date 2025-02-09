@@ -52,20 +52,19 @@ module razor_libs::encoded {
 
   public fun decode_u16(encoded: vector<u8>, offset: u8): u16 {
     let value = decode(encoded, MASK_UINT16(), offset);
-    assert!(value <= 0xffff, 2);
-    (value & 0xffff) as u16
+    assert!(value <= MASK_UINT16(), 2);
+    u16(value)
   }
 
   public fun decode_u24(encoded: vector<u8>, offset: u8): u32 {
     let value = decode(encoded, MASK_UINT24(), offset);
-    assert!(value <= 0xffffff, 3);
-    (value & 0xffffff) as u32
+    assert!(value <= MASK_UINT24(), 3);
+    u32(value)
   }
 
   public fun decode_u64(encoded: vector<u8>, offset: u8): u64 {
     let value = decode(encoded, MASK_UINT64(), offset);
-    assert!(value <= 0xffffffffffffffff, 4); 
-    (value & 0xffffffffffffffff) as u64
+    assert!(value <= MASK_UINT64(), 4); 
+    u64(value)
   }
-
 }
