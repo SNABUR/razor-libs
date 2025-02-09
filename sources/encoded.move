@@ -1,5 +1,7 @@
 module razor_libs::encoded {
   use std::bcs;
+  
+  use std::integer;
 
   use aptos_std::from_bcs;
 
@@ -51,20 +53,17 @@ module razor_libs::encoded {
   }
 
   public fun decode_u16(encoded: vector<u8>, offset: u8): u16 {
-    let value = decode(encoded, MASK_UINT16(), offset);
-    assert!(value <= MASK_UINT16(), 2);
-    u16(value)
+      let value = decode(encoded, MASK_UINT16(), offset);
+      integer::u256_to_u16(value)
   }
 
   public fun decode_u24(encoded: vector<u8>, offset: u8): u32 {
-    let value = decode(encoded, MASK_UINT24(), offset);
-    assert!(value <= MASK_UINT24(), 3);
-    u32(value)
+      let value = decode(encoded, MASK_UINT24(), offset);
+      integer::u256_to_u32(value)
   }
 
   public fun decode_u64(encoded: vector<u8>, offset: u8): u64 {
-    let value = decode(encoded, MASK_UINT64(), offset);
-    assert!(value <= MASK_UINT64(), 4); 
-    u64(value)
+      let value = decode(encoded, MASK_UINT64(), offset);
+      integer::u256_to_u64(value)
   }
 }
