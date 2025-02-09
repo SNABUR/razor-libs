@@ -12,8 +12,8 @@ bob = "0xb0b"
 [dev-addresses]
 
 [dependencies.AptosFramework]
-git = "https://github.com/aptos-labs/aptos-framework.git"
-rev = "mainnet"
-subdir = "aptos-framework"
+git = "https://github.com/Entropy-Foundation/aptos-core.git"
+rev = "dev"
+subdir = "aptos-move/framework/supra-framework"
 
 [dev-dependencies]
