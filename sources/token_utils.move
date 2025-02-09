@@ -1,9 +1,9 @@
 /// @title TokenUtils
 /// @notice A library for creating and managing token stores
 module razor_libs::token_utils {
-  use aptos_framework::object::{Self, Object};
-  use aptos_framework::fungible_asset::{Self, FungibleStore, Metadata};
-  use aptos_framework::primary_fungible_store;
+  use supra_framework::object::{Self, Object};
+  use supra_framework::fungible_asset::{Self, FungibleStore, Metadata};
+  use supra_framework::primary_fungible_store;
   
   public fun create_token_store(pool_signer: &signer, token: Object<Metadata>): Object<FungibleStore> {
     let constructor_ref = &object::create_object_from_object(pool_signer);
