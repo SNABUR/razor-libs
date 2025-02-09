@@ -3,8 +3,8 @@
 module razor_libs::sort {
   use std::vector;
 
-  use aptos_framework::object::{Self, Object};
-  use aptos_framework::fungible_asset::Metadata;
+  use supra_framework::object::{Self, Object};
+  use supra_framework::fungible_asset::Metadata;
 
   use aptos_std::comparator;
 
